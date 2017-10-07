@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import com.tiktok.model.User;
 import com.tiktok.service.UserService;
+import java.io.IOException;
+import java.io.PrintWriter;
 @Controller
 public class RegistrationController {
   @Autowired
@@ -37,5 +39,12 @@ public class RegistrationController {
   @RequestMapping(value = "/registerProcess", method = RequestMethod.GET)
   public ModelAndView registerPage(HttpServletRequest request, HttpServletResponse response){
       return new ModelAndView("register");
+  }
+  @RequestMapping(value = "/userAvailability", method = RequestMethod.POST)
+  public void checkUser(HttpServletRequest request, HttpServletResponse response) throws IOException{
+      PrintWriter out = response.getWriter();
+      if(userService.validatedUser(request.getParameter("username"))!=null){
+          out.println("Username Already Exist");
+      }else out.println("Pass");
   }
 }

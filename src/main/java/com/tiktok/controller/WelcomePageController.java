@@ -13,6 +13,7 @@ import com.tiktok.model.User;
 import com.tiktok.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -34,13 +35,14 @@ public class WelcomePageController {
       mav.addObject("message","You have been successfully logged out");
       return mav;
   }
-    @RequestMapping(value = {"/welcome", "/loginProcess"}, method = RequestMethod.GET)
-  public ModelAndView showWelcome(HttpServletRequest request, HttpServletResponse response) {
+    @RequestMapping(value = {"/welcome", "/loginProcess", "/uploadImage", "login"}, method = RequestMethod.GET)
+    public ModelAndView showWelcome(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
     HttpSession session = request.getSession(false);
     ModelAndView mav=null;
     if(session.getAttribute("UserName")!=null){
     User user = userService.validatedUser(session.getAttribute("UserName").toString());
     mav = new ModelAndView("welcome");
+    model.addAttribute("products", userService.getUsers());
     mav.addObject("name",user.getName());
     mav.addObject("phone",user.getPhone());
     mav.addObject("email",user.getEmail());
@@ -51,4 +53,5 @@ public class WelcomePageController {
     }
     return mav;
   }
+  
 }
