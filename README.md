@@ -1,12 +1,15 @@
 TikTak Chat
 
 // Short Description 
+
 Description: TikTak Chat is a java web application use to chat with the people's around the world. You can talk to strangers and of course your friends. 
 
 // Application Design. 
+
 I used 4 pages here the first page is home.jsp which contain the details about the application and brief description. You can see two options there Login and Register. If you are new choose register. It will redirect you to the register.jsp page where you can register yourself. Make sure your username and password length must be 8 or more.Once you registered you will be redirect to the  login.jsp page which contain username and password two text fields and one submit button. Once you entered username and password click on submit button. System will verify your username and password and responds to them. If your details are correct you will be redirect to the welcome.jsp page. For your safety we used AES encryption and HttpSession for login process. 
 
 //Implementation of application
+
 I used SpringMVC model With maven in implementation. Where front control receive the request and then send this request to other controllers. SpringMVC is very flexible. You can switch database and frameworks easily by SpringMVC model. It provides you scalability too. Less dependency, . 
 Implementation Summery:
 Framework: SpringMVC with maven 
@@ -16,6 +19,7 @@ Front-End: HTML, CSS, Jquery, JavaScript, Ajax, JSTL.
 Back-End: Servlet, JSP, MySql, XML. 
 
 // Features of applicaiton
+
 1. Easy to use.
 2. No verification required.
 3. Secure password by AES.
