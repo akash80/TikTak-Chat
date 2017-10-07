@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.tiktok.dao.UserDao;
 import com.tiktok.model.Login;
 import com.tiktok.model.User;
+import java.util.List;
 
 public class UserServiceImpl implements UserService {
 
@@ -29,5 +30,9 @@ public class UserServiceImpl implements UserService {
   @Override
   public User validatedUser(String username){
       return userDao.validatedUser(username);
+  }
+  @Override
+  public List<User> getUsers(){
+      return userDao.getUsers();
   }
 }

@@ -7,6 +7,7 @@ package com.tiktok.service;
 
 import com.tiktok.model.Login;
 import com.tiktok.model.User;
+import java.util.List;
 
 public interface UserService {
 
@@ -15,4 +16,7 @@ public interface UserService {
   User validateUser(Login login);
   
   User validatedUser(String username);
+  
+  List<User> getUsers();
+  
 }

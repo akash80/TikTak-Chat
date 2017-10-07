@@ -10,15 +10,12 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import com.tiktok.model.Login;
 import com.tiktok.model.User;
 public class UserDaoImpl implements UserDao {
-  @Autowired
-  DataSource datasource;
   @Autowired
   JdbcTemplate jdbcTemplate;
   @Override
@@ -37,13 +34,20 @@ public class UserDaoImpl implements UserDao {
     public User validatedUser(String username){
     String sql = "select * from user where username='"+username+"'";
     List<User> users = jdbcTemplate.query(sql, new UserMapper());
+    System.out.println("1");
     return users.size() > 0 ? users.get(0) : null;
+    }
+    @Override
+    public List<User> getUsers() {
+        String sql = "select username,name,email,phone from user";
+        return this.jdbcTemplate.query(sql, new UserMapper());
     }
   }
   class UserMapper implements RowMapper<User> {
   @Override
   public User mapRow(ResultSet rs, int arg1) throws SQLException {
     User user = new User();
+    System.out.println("2");
     user.setUsername(rs.getString("username"));
       try {
           user.setPassword(rs.getString("password"));
