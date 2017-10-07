@@ -17,6 +17,7 @@ h5,h6{margin-left: 80px;}
 .scroll{overflow: auto;}
 .img{border-radius: 50%;}
 .logo{margin-left: 15px;}
+p{color: #ffffff;}
 @media (min-width: 768px) {#page-wrapper {position: inherit;margin: 0 0 0 250px;padding: 0 30px;border-left: 1px solid #e7e7e7;}}
 .sidebar .sidebar-nav.navbar-collapse {padding-left: 0;padding-right: 0;}
 .sidebar .sidebar-search {padding: 15px;}
