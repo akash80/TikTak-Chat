@@ -27,5 +27,6 @@ Back-End: Servlet, JSP, MySql, XML.
 5. Make new friends.
 6. Create Group. 
 
-//code structure
+//Code structure
+
 Client send the request to the server. All the request send to the web.xml. Here i configured web.xml so then all the request web.xml will pass to the dispatcher servlet. Now dispatcher work is to find the suitable controller and send the request. We use @Controller annotation to tell front controller also know as dispatcher servlet that this this servlet is controller. So when controller get the request it start to work on it like any MVC model. Once the work is done controller send response to view or we can say to the jsp file because we used jsp as a view here. 
