@@ -13,22 +13,39 @@ footer{width: 100%; height: 50px; background-color: #58D68D;}
 body {background-color: #f8f8f8;}
 h5,h6{margin-left: 80px;}
 #wrapper {width: 100%;}
-#page-wrapper {padding: 0 15px; min-height: 490px; background-color: white;}
+#page-wrapper {padding: 0 15px; min-height: 490px; background-color: white; padding: 0 30px;}
+#profile_icon{float: left; width: 50px;}
+#profile_username{float: right; margin-top: 8px; margin-right: 10px; font-size: 21px; color: #212F3D;}
+#textbox{display: none;}
 .scroll{overflow: auto;}
 .img{border-radius: 50%;}
 .logo{margin-left: 15px;}
+.list-button{background-color: Transparent;background-repeat:no-repeat;border: none;cursor:pointer;overflow: hidden;outline:none; color: #1b6d85}
 p{color: #ffffff;}
+.form-control{height: 49px;}
+.input-group{width: -webkit-fill-available;}
 @media (min-width: 768px) {#page-wrapper {position: inherit;margin: 0 0 0 250px;padding: 0 30px;border-left: 1px solid #e7e7e7;}}
 .sidebar .sidebar-nav.navbar-collapse {padding-left: 0;padding-right: 0;}
 .sidebar .sidebar-search {padding: 15px;}
 .sidebar ul li {border-bottom: 1px solid #e7e7e7;}
 .sidebar ul li a.active {background-color: #eeeeee;}
-.message-box{height: 380px; background-color: #F8F8F8; margin-top: 20px; float: left; width: 70%;}
+.chat-box{height: 380px; background-color: beige; margin-top: 20px; float: left; width: 70%;}
+.chat-box-boarder{background-color: #58d68d; width: 100%; height: 50px;}
 .detail-bar{height: 380px; background-color: #58D68D; margin-top: 20px; float: right; width: 28%; text-align: center;}
-.text-box{width: 100%;}
+.text-box{width: 100%;} 
  textarea{width: 85%; float: left; margin-top: 15px;}
 .send-button{width: 15%; height: 46px; margin-top: 15px;}
 .image {float: left; margin-left: 10px;}
 .list{height: 350px;}
 @media (min-width: 768px) {.sidebar {z-index: 1;position: absolute;width: 250px;margin-top: 51px;}}
 @media screen and (max-width: 768px){.list{height: 150px}.message-box, .detail-bar{height: 200px;}#page-wrapper{min-height: 310px;}}
+#wrapper {width: 100%;}
+#page-wrapper {padding: 0 15px;min-height: 568px;background-color: white;}
+@media (min-width: 768px) {#page-wrapper {position: inherit; margin: 0 0 0 250px;padding: 0 30px;border-left: 1px solid #e7e7e7;}}
+.chat {margin: 0;padding: 0;list-style: none;}
+.chat li {margin-bottom: 10px;padding-bottom: 5px;border-bottom: 1px dotted #999999;}
+.chat li.left .chat-body {margin-left: 60px;}
+.chat li.right .chat-body {margin-right: 60px;}
+.chat li .chat-body p {margin: 0;}
+.panel .slidedown .glyphicon,.chat .glyphicon {margin-right: 5px;}
+.chat-panel .panel-body {height: 350px;overflow-y: scroll;}

@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService {
       return userDao.validatedUser(username);
   }
   @Override
-  public List<User> getUsers(){
-      return userDao.getUsers();
+  public List<User> getUsers(String username){
+      return userDao.getUsers(username);
   }
 }

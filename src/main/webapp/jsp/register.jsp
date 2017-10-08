@@ -17,6 +17,8 @@
                 .login-panel{margin-top:25%;}
                 .form-control{margin-bottom:5px;}
              </style>
+             
+             
         </head>
         <body>
         <div class="container">
@@ -27,24 +29,26 @@
                         <h3 class="panel-title">Register Here</h3>
                     </div>
                     <div class="panel-body">
-                       <form modelAttribute="user" method="POST" action="registerProcess">
+                       <form modelAttribute="user" method="POST" action="registerProcess" name="regF">
                             <fieldset>
+                                <span id="id"></span>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Username" name="username" type="text" required>
+                                    <input class="form-control" placeholder="Username" name="username" id="username" type="text" required>
+                                </div>
+                                <span id="pass"></span>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Password" name="password" id="password" type="password" required>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="password" type="password" >
+                                    <input class="form-control" placeholder="name" name="name" type="text" required>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="name" name="name" type="text" >
+                                    <input class="form-control" placeholder="email" name="email" type="email" required>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="email" name="email" type="email" >
+                                    <input class="form-control" placeholder="phone" name="phone" type="number" required>
                                 </div>
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="phone" name="phone" type="phone" >
-                                </div>
-                                <input type="submit" value="Sign up" class="btn btn-lg btn-success btn-block" />
+                                <input type="submit" value="Sign up" id="submit_form" class="btn btn-lg btn-success btn-block" />
                             </fieldset>
                         </form>
                     </div>
@@ -52,5 +56,8 @@
             </div>
         </div>
     </div>
+   <!-- script -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="${pageContext.request.contextPath}/resources/js/custom.js"></script>
         </body>
         </html>

@@ -5,12 +5,17 @@
  */
 package com.tiktok.dao;
 
-import com.tiktok.model.Login;
-import com.tiktok.model.User;
+import com.tiktok.model.Message;
 import java.util.List;
-public interface UserDao {
-  void register(User user);
-  User validateUser(Login login);
-  User validatedUser(String username);
-  List<User> getUsers(String username);
+
+/**
+ *
+ * @author akash
+ */
+public interface MessageDao {
+    
+    void send(Message msg);
+    
+    List<Message> getMessages(String sender, String receiver);
+    
 }

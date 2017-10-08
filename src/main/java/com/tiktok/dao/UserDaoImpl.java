@@ -8,8 +8,6 @@ package com.tiktok.dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -34,12 +32,11 @@ public class UserDaoImpl implements UserDao {
     public User validatedUser(String username){
     String sql = "select * from user where username='"+username+"'";
     List<User> users = jdbcTemplate.query(sql, new UserMapper());
-    System.out.println("1");
     return users.size() > 0 ? users.get(0) : null;
     }
     @Override
-    public List<User> getUsers() {
-        String sql = "select username,name,email,phone from user";
+    public List<User> getUsers(String username) {
+        String sql = "select username,name,email,phone from user where username!='"+username+"'";
         return this.jdbcTemplate.query(sql, new UserMapper());
     }
   }
@@ -47,13 +44,7 @@ public class UserDaoImpl implements UserDao {
   @Override
   public User mapRow(ResultSet rs, int arg1) throws SQLException {
     User user = new User();
-    System.out.println("2");
     user.setUsername(rs.getString("username"));
-      try {
-          user.setPassword(rs.getString("password"));
-      } catch (Exception ex) {
-          Logger.getLogger(UserMapper.class.getName()).log(Level.SEVERE, null, ex);
-      }
     user.setName(rs.getString("name"));
     user.setEmail(rs.getString("email"));
     user.setPhone(rs.getString("phone"));

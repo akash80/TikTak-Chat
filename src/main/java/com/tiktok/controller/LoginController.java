@@ -22,7 +22,7 @@ public class LoginController {
   @Autowired
   UserService userService;
   @RequestMapping(value = "/loginProcess", method = RequestMethod.POST)
-  public ModelAndView loginProcess(HttpServletRequest request, HttpServletResponse response,
+  public String loginProcess(HttpServletRequest request, HttpServletResponse response,
   @ModelAttribute("login") Login login) {
     ModelAndView mav = null;
     User user = userService.validateUser(login);
@@ -30,17 +30,8 @@ public class LoginController {
     HttpSession session = request.getSession(true);
     session.setAttribute("UserName", user.getUsername());
     session.setMaxInactiveInterval(18000);
-    
-    mav = new ModelAndView("welcome");
-    mav.addObject("name",user.getName());
-    mav.addObject("phone",user.getPhone());
-    mav.addObject("email",user.getEmail());
-    mav.addObject("username",user.getUsername());
-    } else {
-    mav = new ModelAndView("login");
-    mav.addObject("message", "Username or Password is wrong!!");
     }
-    return mav;
+    return "forward:/welcome";
   }
   
 }

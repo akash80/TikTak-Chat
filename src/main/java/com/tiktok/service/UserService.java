@@ -17,6 +17,6 @@ public interface UserService {
   
   User validatedUser(String username);
   
-  List<User> getUsers();
+  List<User> getUsers(String username);
   
 }

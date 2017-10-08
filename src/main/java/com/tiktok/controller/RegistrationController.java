@@ -47,4 +47,5 @@ public class RegistrationController {
           out.println("Username Already Exist");
       }else out.println("Pass");
   }
+  
 }
