@@ -23,9 +23,8 @@ Back-End: Servlet, JSP, MySql, XML.
 1. Easy to use.
 2. No verification required.
 3. Secure password by AES.
-4. Send friend request.
-5. Make new friends.
-6. Create Group. 
+4. send personal messages.
+5. click on username to refresh page.
 
 //Code structure
 
