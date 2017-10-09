@@ -54,7 +54,7 @@
                        <c:forEach items="${list}" var="list">
                         <li>
                             <div class="image"><img src="http://placehold.it/50/FA6F57/fff" width="80%" alt="" class="img"></div>
-                            <h5><a href="#" onclick="submitdata('${username}','${list.username}');">${list.username}</a></h5>
+                            <h5><a href="#" onclick="chat('${username}','${list.username}');">${list.username}</a></h5>
                             <h6>${list.name}</h6>
                         </li>
                       </c:forEach>
