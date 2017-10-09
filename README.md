@@ -1,8 +1,8 @@
-TikTak Chat
+TikTok Chat
 
 // Short Description 
 
-Description: TikTak Chat is a java web application use to chat with the people's around the world. You can talk to strangers and of course your friends. 
+Description: TikTok Chat is a java web application use to chat with the people's around the world. You can talk to strangers and of course your friends. 
 
 // Application Design. 
 
@@ -10,13 +10,13 @@ I used 4 pages here the first page is home.jsp which contain the details about t
 
 //Implementation of application
 
-I used SpringMVC model With maven in implementation. Where front control receive the request and then send this request to other controllers. SpringMVC is very flexible. You can switch database and frameworks easily by SpringMVC model. It provides you scalability too. Less dependency, . 
+I used SpringMVC model With maven in implementation. Where web.xml receive the request and then send all request to front controllers. SpringMVC is very flexible. You can switch database and frameworks easily by SpringMVC model. It provides you scalability too. Less dependency.
 Implementation Summery:
 Framework: SpringMVC with maven 
 Language: Java
 IDE: Netbeans.
 Front-End: HTML, CSS, Jquery, JavaScript, Ajax, JSTL.
-Back-End: Servlet, JSP, MySql, XML. 
+Back-End: Servlet, JSP, MySql, XML,JSON 
 
 //Tools i used 
 Bootstrap.css and Bootstrap.js for styling my work. 
