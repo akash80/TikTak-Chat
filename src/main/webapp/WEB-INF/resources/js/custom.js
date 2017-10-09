@@ -4,7 +4,13 @@
  * and open the template in the editor.
  */
 
+var myVar;
+var s;
+var r;
 
+function myFunction() {
+    myVar = setInterval(submitdata, 1000, s, r);
+}
 // User name Aailability check
 $(document).ready(function(){
     $("#username").keyup(function(){
@@ -63,8 +69,16 @@ function unlock(){
 }
 
 // Profile Switching for messanging 
+function chat(s,r){
+    clearInterval(myVar);
+    this.s=s;
+    this.r=r;
+    myFunction();
+   return false;
+}
 function submitdata(s, r)
 {
+    console.log("hi");
  $.ajax({
   type: 'post',
   url: 'profile',
@@ -74,7 +88,6 @@ function submitdata(s, r)
   },
   success: function (response) {
      var obj = JSON.parse(response);
-     console.log(response);
    $('#profile_username')[0].innerHTML = r;
    $("#profile_icon").attr("src", "/TikTok/resources/images/ic.jpg");
    $('#textbox')[0].style.display = "block";
@@ -104,7 +117,6 @@ function submitdata(s, r)
   }
  });
 	
- return false;
 }
 
 // send message and update 
