@@ -2,7 +2,7 @@ TikTok Chat
 
 // Short Description 
 
-Description: TikTok Chat is a java web application use to chat with the people's around the world. You can talk to strangers and of course your friends. 
+Description: TikTok Chat is a java web application use to chat with the people's around the world. You can talk to strangers and of course your friends. I used ajax to update messages all you have to do just click your friend username so you can update messages. Auto update is under development.
 
 // Application Design. 
 
