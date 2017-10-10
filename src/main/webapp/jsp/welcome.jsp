@@ -28,12 +28,12 @@
    </head>
 
 <body>
-    <header><img src="${pageContext.request.contextPath}/resources/images/logo.png" width="100px;" class="logo"/><div style="float: right; margin-right: 35%;"><h4>****Please click on username for refresh chat****</h4></div></header>
+    <header><img src="${pageContext.request.contextPath}/resources/images/logo.png" width="100px;" class="logo"/><button id='groupButton' onclick="groupChat()" class='btn btn-default'>back to group chat</button></header>
       <div id="wrapper">
         <nav class="navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">${username} </a>
-              
+                <a class="navbar-brand" href="welcome">${username} </a>
+                
             </div>
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
@@ -67,8 +67,16 @@
             <div class="row">
                 
                 <div class="chat-box">
-                    <div class="chat-box-boarder"><img src="" id="profile_icon"><p id="profile_username"></p></div>
+                    <div class="chat-box-boarder"><img src="" id="profile_icon"><p id="profile_username">Group Chat Using web Socket</p></div>
                     <!-- /.panel -->
+                    <div id='groupchat'>
+                        <textarea id="chatlog" readonly></textarea><br/>
+                        <input id="groupMsg" type="text" />
+                        <button type="submit" id="sendButton" onClick="postToServer('${username}')">Send!</button>
+                        <button type="submit" id="sendButton" onClick="closeConnect()">End</button>
+
+                    </div>
+                                   
                     <div class="chat-panel panel panel-default" id="textbox">
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -82,7 +90,7 @@
                                     <input type="text" id="sender" value="${username}" hidden />   
                                     <input id="message" type="text" class="form-control input-sm" placeholder="Type your message here..." />
                                     <span class="input-group-btn">
-                                        <button class="btn btn-warning btn-sm" id="btn-chat">
+                                        <button onclick='sendMessage()' class="btn btn-warning btn-sm" id="btn-chat">
                                             Send
                                         </button>
                                     </span>
@@ -107,14 +115,11 @@
                    <hr>
                    <form method="post" action="logoutSession"><input class="btn btn-default" type="submit" value="Logout" ></form>
                 </div>
-                
             </div>
      </div>
 </div>
 <footer></footer>
 <!-- script -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
    <script src="${pageContext.request.contextPath}/resources/js/custom.js"></script>
 </body>
 </html>
